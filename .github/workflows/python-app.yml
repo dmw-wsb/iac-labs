@@ -25,9 +25,10 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        poetry install
+        poetry install -- no_root
     - name: Lint with flake8
-      run: poetry lint
+      run: |
+        poetry lint
     - name: Test with pytest
       run: |
         pytest
